@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="gr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>𝕸𝖚𝖘𝖎𝖈♥𝕮𝖍𝖔𝖎𝖈𝖊𝖘</title>
+
+<style>
+html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background: ;
+        overflow: hidden;
+        font-family: 'Arial Black', Arial, sans-serif;
+}
+
+/* BASE BOX */
+.video-box {
+        position: fixed;
+        height: 520px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 16px;
+        border: 3px solid #ff0000;
+        box-shadow: 0px #ff0000, 0px;
+        overflow: hidden;
+        background: ;
+}
+
+/* LATERALI */
+#left,
+#right {
+        width: 240px;
+}
+
+/* CENTRO PIU LARGO */
+#center {
+        width: 300px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 9500;
+}
+
+.video-box video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+}
+
+/* TESTO LATERALE NEON IN BASSO */
+.wave-left, .wave-right {
+        position: absolute;
+        bottom: 10px;
+        font-size: 22px;
+        font-weight: bold;
+        pointer-events: none;
+        text-align: center;
+        animation: neonWave 2s ease-in-out infinite, glow 1.5s ease-in-out infinite alternate;
+}
+
+/* LATERALI DX/SX */
+.wave-left { left: 0; width: 100%; color: #00ffff; }
+.wave-right { right: 0; width: 100%; color: #00ffff; }
+
+/* Animazioni */
+@keyframes neonWave {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-4px); }
+        100% { transform: translateY(0); }
+}
+
+
+
+/* TESTO CENTRALE */
+.center-title {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 0vw;
+        color: #00ffff;
+        text-shadow:
+                0 0 15px #ff0000,
+                0 0 30px #00ffff,
+                0 0 60px #ff0000,
+                0 0 100px #00ffff;
+        letter-spacing: 10px;
+        z-index: 9999;
+        animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+        0%,100% { opacity: 1; }
+        50% { opacity: 1; }
+}
+
+/* POSIZIONI BOX */
+#left { left: 108px; z-index: 8000; }
+#right { right: 108px; z-index: 8000; }
+</style>
+</head>
+
+<body>
+
+<!-- SINISTRA -->
+<div class="video-box" id="left">
+        <video autoplay loop muted playsinline>
+                <source src="https://choises.github.io/vl/Yt.mp4" type="video/mp4">
+        </video>
+        <div class="wave-left">𝕸𝖚𝖘𝖎𝖈 𝕮𝖍𝖔𝖎𝖈𝖊𝖘</div>
+</div>
+
+<!-- CENTRO -->
+
+
+<!-- DESTRA -->
+<div class="video-box" id="right">
+        <video autoplay loop muted playsinline>
+                <source src="https://choises.github.io/vl/Yt.mp4" type="video/mp4">
+
+        </video>
+        <div class="wave-right">𝕸𝖚𝖘𝖎𝖈 𝕮𝖍𝖔𝖎𝖈𝖊𝖘</div>
+</div>
+
+<div class="center-title">𝕸𝖚𝖘𝖎𝖈 𝕮𝖍𝖔𝖎𝖈𝖊𝖘</div>
+
+<script>
+const centerVideo = document.getElementById("centerVideo");
+const centerText  = document.getElementById("centerText");
+
+const playlist = [
+    { src: "", text: "𝕸𝖚𝖘𝖎𝖈 𝕮𝖍𝖔𝖎𝖈𝖊𝖘", time: 15000 },
+    { src: "", text: "𝕸𝖚𝖘𝖎𝖈 𝕮𝖍𝖔𝖎𝖈𝖊𝖘",  time: 15000 },
+    { src: "", text: "Music Choices",  time: 20000 },
+    { src: "",  text: "𝕸𝖚𝖘𝖎𝖈 𝕮𝖍𝖔𝖎𝖈𝖊𝖘", time: 20000 }
+];
+
+let index = 0;
+
+function playNext() {
+        const item = playlist[index];
+
+        centerVideo.src = item.src;
+        centerText.textContent = item.text;
+
+        centerVideo.load();
+        centerVideo.play().catch(()=>{});
+
+        setTimeout(() => {
+                index = (index + 1) % playlist.length;
+                playNext();
+        }, item.time);
+}
+
+playNext();
+</script><script>
+
+    var message = "𝓐𝔩𝔩 ℑ𝔰...𝕮𝖍𝖔𝖎𝖈𝖊𝖘";
+
+    function clickIE4() {
+        if (event.button == 2) {
+            alert(message);
+            return false;
+        }
+    }
+
+    function clickNS4(e) {
+        if (document.layers || document.getElementById && !document.all) {
+            if (e.which == 2 || e.which == 3) {
+                alert(message);
+                return false;
+            }
+        }
+    }
+
+    if (document.layers) {
+        document.captureEvents(Event.MOUSEDOWN);
+        document.onmousedown = clickNS4;
+    } else if (document.all && !document.getElementById) {
+        document.onmousedown = clickIE4;
+    }
+
+    document.oncontextmenu = new Function("alert(message);return false")
+</script>
+<script>
+
+    function disableselect(e) {
+        return false
+    }
+    function reEnable() {
+        return true
+    }
+    document.onselectstart = new Function("return false")
+    if (window.sidebar) {
+        document.onmousedown = disableselect
+        document.onclick = reEnable
+    }
+</script>
+<script>
+        window.oncontextmenu = function () {
+            console.log("Right Click Disabled");
+            return false;
+        }
+    </script>
+
+</body>
+</html>
